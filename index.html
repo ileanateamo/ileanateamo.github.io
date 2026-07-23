@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+/* ========================================= */
+/* RESET */
+/* ========================================= */
 
 *{
     margin:0;
@@ -22,10 +25,10 @@ html{
 
 body{
 
-    font-family:Poppins,sans-serif;
+    font-family:'Poppins',sans-serif;
 
     background:
-    linear-gradient(rgba(255,240,245,.45),rgba(255,240,245,.45)),
+    linear-gradient(rgba(255,240,245,.35),rgba(255,240,245,.35)),
     url("fondo_principal.jpeg");
 
     background-size:cover;
@@ -33,71 +36,167 @@ body{
     background-attachment:fixed;
 
     color:#4a2c2a;
+
+    overflow-x:hidden;
 }
 
-/*--------------------------------*/
-/* Pantalla de inicio */
-/*--------------------------------*/
+/*==========================================*/
+/* ILUMINACIÓN */
+/*==========================================*/
+
+#luz{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+z-index:1;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.18),
+rgba(0,0,0,.18));
+
+transition:1s;
+
+}
+
+/*==========================================*/
+/* PANTALLA INICIAL */
+/*==========================================*/
 
 #inicio{
 
-    height:100vh;
+height:100vh;
 
-    display:flex;
+display:flex;
 
-    justify-content:center;
+justify-content:center;
 
-    align-items:center;
+align-items:center;
 
-    flex-direction:column;
+flex-direction:column;
 
-    backdrop-filter:blur(3px);
+text-align:center;
+
+padding:20px;
+
+backdrop-filter:blur(3px);
+
 }
 
 #inicio h1{
 
-    font-family:'Great Vibes',cursive;
+font-family:'Great Vibes',cursive;
 
-    font-size:80px;
+font-size:52px;
 
-    color:white;
+color:white;
 
-    text-shadow:3px 3px 10px black;
+line-height:1.2;
 
-    margin-bottom:40px;
+text-shadow:0 5px 20px rgba(0,0,0,.6);
+
+margin-bottom:35px;
+
 }
+
+/*==========================================*/
+/* BOTÓN */
+/*==========================================*/
 
 #entrar{
 
-    padding:18px 55px;
+padding:18px 55px;
 
-    font-size:22px;
+font-size:20px;
 
-    border:none;
+border:none;
 
-    border-radius:50px;
+border-radius:35px;
 
-    background:#ff5f8f;
+background:#ff5f8f;
 
-    color:white;
+color:white;
 
-    cursor:pointer;
+cursor:pointer;
 
-    transition:.4s;
+box-shadow:0 10px 30px rgba(255,95,143,.45);
+
+transition:.35s;
+
 }
 
 #entrar:hover{
 
-    transform:scale(1.08);
+transform:scale(1.05);
 
-    background:#ff3f77;
+background:#ff3f77;
+
+box-shadow:0 15px 35px rgba(255,95,143,.65);
+
+}
+
+/*==========================================*/
+/* CONTADOR */
+/*==========================================*/
+
+.contador{
+
+margin-top:35px;
+
+background:rgba(255,255,255,.88);
+
+padding:18px;
+
+width:90%;
+
+max-width:340px;
+
+border-radius:22px;
+
+box-shadow:0 15px 30px rgba(0,0,0,.18);
+
+}
+
+.contador h3{
+
+font-size:23px;
+
+margin-bottom:10px;
+
+color:#cc3d6d;
+
+}
+
+#tiempo{
+
+font-size:19px;
+
+font-weight:600;
+
+line-height:1.7;
+
+color:#d44f7c;
+
 }
 
 #contenido{
 
-    display:none;
+display:none;
 
-    animation:aparecer 1s;
+animation:aparecer 1s;
+
+position:relative;
+
+z-index:2;
+
 }
 
 @keyframes aparecer{
@@ -106,7 +205,7 @@ from{
 
 opacity:0;
 
-transform:translateY(20px);
+transform:translateY(25px);
 
 }
 
@@ -120,27 +219,30 @@ transform:translateY(0);
 
 }
 
-/*--------------------------------*/
+/*==========================================*/
 /* CARTAS */
-/*--------------------------------*/
+/*==========================================*/
 
 .carta{
 
-    width:90%;
+width:92%;
 
-    max-width:900px;
+max-width:700px;
 
-    margin:70px auto;
+margin:40px auto;
 
-    background:#fffef8;
+padding:30px;
 
-    padding:60px;
+background:#fffef8;
 
-    border-radius:8px;
+border-radius:24px;
 
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+box-shadow:
+0 20px 50px rgba(0,0,0,.22);
 
-    position:relative;
+position:relative;
+
+overflow:hidden;
 
 }
 
@@ -151,21 +253,23 @@ content:"";
 position:absolute;
 
 left:0;
-
 top:0;
 
 width:100%;
-
 height:100%;
 
 background:
 repeating-linear-gradient(
+
 white 0px,
-white 30px,
-#e9e9e9 31px
+
+white 31px,
+
+#ececec 32px
+
 );
 
-opacity:.28;
+opacity:.22;
 
 pointer-events:none;
 
@@ -179,53 +283,66 @@ z-index:2;
 
 }
 
+/*==========================================*/
+/* TITULOS */
+/*==========================================*/
+
 h2{
 
 font-family:'Great Vibes',cursive;
 
-font-size:58px;
+font-size:42px;
 
 text-align:center;
 
 margin-bottom:25px;
 
-color:#cc3d6d;
+color:#d04b79;
 
 }
 
 h3{
 
-font-size:32px;
+font-size:28px;
 
 text-align:center;
 
-margin-bottom:30px;
+margin-bottom:25px;
 
 color:#b84266;
 
+font-weight:600;
+
 }
+
+/*==========================================*/
+/* TEXTO */
+/*==========================================*/
 
 p{
 
-font-size:20px;
+font-size:18px;
 
 line-height:2;
 
-}
+white-space:pre-line;
 
-/*--------------------------------*/
-/* GALERIA */
-/*--------------------------------*/
+text-align:justify;
+
+}
+/*==========================================*/
+/* GALERÍA DE FOTOS */
+/*==========================================*/
 
 .galeria{
 
 display:grid;
 
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+grid-template-columns:1fr;
 
-gap:20px;
+gap:22px;
 
-margin-top:30px;
+margin-top:25px;
 
 }
 
@@ -233,15 +350,15 @@ margin-top:30px;
 
 width:100%;
 
-height:260px;
+height:320px;
 
 object-fit:cover;
 
-border-radius:15px;
+border-radius:22px;
 
-box-shadow:0 10px 25px rgba(0,0,0,.25);
+box-shadow:0 15px 35px rgba(0,0,0,.22);
 
-transition:.4s;
+transition:.45s;
 
 cursor:pointer;
 
@@ -249,17 +366,33 @@ cursor:pointer;
 
 .galeria img:hover{
 
-transform:scale(1.05);
+transform:scale(1.03);
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
 
 }
 
-/*--------------------------------*/
+/*==========================================*/
 /* CONVERSACIONES */
-/*--------------------------------*/
+/*==========================================*/
 
 .conversacion{
 
 margin-bottom:55px;
+
+padding-bottom:35px;
+
+border-bottom:1px solid rgba(0,0,0,.08);
+
+}
+
+.conversacion:last-child{
+
+border-bottom:none;
+
+margin-bottom:0;
+
+padding-bottom:0;
 
 }
 
@@ -267,15 +400,23 @@ margin-bottom:55px;
 
 width:100%;
 
-max-width:340px;
+max-width:100%;
 
 display:block;
 
 margin:auto;
 
-border-radius:20px;
+border-radius:22px;
 
-box-shadow:0 15px 30px rgba(0,0,0,.3);
+box-shadow:0 15px 35px rgba(0,0,0,.22);
+
+transition:.4s;
+
+}
+
+.conversacion img:hover{
+
+transform:scale(1.02);
 
 }
 
@@ -283,43 +424,466 @@ box-shadow:0 15px 30px rgba(0,0,0,.3);
 
 margin-top:20px;
 
-text-align:center;
+font-size:17px;
 
-font-size:18px;
+line-height:1.9;
+
+text-align:center;
 
 }
 
-/*--------------------------------*/
-/* DECLARACION */
-/*--------------------------------*/
+/*==========================================*/
+/* DECLARACIÓN */
+/*==========================================*/
 
 .rosa{
 
-background:#ffd7e5;
+background:linear-gradient(
+180deg,
+#ffdce8,
+#ffd0e1
+);
+
+border-radius:24px;
 
 }
 
 .rosa::before{
 
-background:none;
+display:none;
 
 }
 
-/*--------------------------------*/
-/* PIE */
-/*--------------------------------*/
+/*==========================================*/
+/* FOOTER */
+/*==========================================*/
 
 footer{
 
-padding:50px;
+padding:45px 20px;
 
 text-align:center;
 
 font-size:18px;
 
+font-weight:600;
+
 color:white;
 
-text-shadow:1px 1px 5px black;
+text-shadow:0 2px 8px rgba(0,0,0,.6);
+
+}
+
+/*==========================================*/
+/* PÉTALOS */
+/*==========================================*/
+
+#petalos{
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:9999;
+
+}
+
+.petalo{
+
+position:absolute;
+
+top:-50px;
+
+font-size:22px;
+
+opacity:.85;
+
+animation-name:caer;
+
+animation-timing-function:linear;
+
+animation-fill-mode:forwards;
+
+filter:drop-shadow(0 4px 6px rgba(0,0,0,.18));
+
+}
+
+@keyframes caer{
+
+0%{
+
+transform:
+translateY(-40px)
+translateX(0)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+50%{
+
+transform:
+translateY(50vh)
+translateX(25px)
+rotate(180deg);
+
+}
+
+100%{
+
+transform:
+translateY(120vh)
+translateX(90px)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/*==========================================*/
+/* SCROLL */
+/*==========================================*/
+
+::-webkit-scrollbar{
+
+width:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#ff7ea7;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#ffe7ef;
+
+}
+
+/*==========================================*/
+/* SELECCIÓN */
+/*==========================================*/
+
+::selection{
+
+background:#ff9fbe;
+
+color:white;
+
+}
+
+/*==========================================*/
+/* EFECTO AL ENTRAR EN PANTALLA */
+/*==========================================*/
+
+
+/*==========================================*/
+/* EFECTOS DE LOS TÍTULOS */
+/*==========================================*/
+
+h2,
+h3{
+    transition:.35s;
+}
+
+.carta:hover h2,
+.carta:hover h3{
+
+    color:#ff5f8f;
+    transform:scale(1.02);
+
+}
+
+/*==========================================*/
+/* SOMBRAS SUAVES DEL PAPEL */
+/*==========================================*/
+
+.carta{
+
+    transition:
+    transform .35s,
+    box-shadow .35s;
+
+}
+
+.carta:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 28px 60px rgba(0,0,0,.22);
+
+}
+
+/*==========================================*/
+/* EFECTO DE BRILLO DEL PAPEL */
+/*==========================================*/
+
+.carta::after{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:70%;
+
+height:100%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.35),
+
+transparent
+
+);
+
+transform:skewX(-20deg);
+
+transition:1.2s;
+
+pointer-events:none;
+
+}
+
+.carta:hover::after{
+
+left:170%;
+
+}
+
+/*==========================================*/
+/* ANIMACIÓN DE APARICIÓN */
+/*==========================================*/
+
+@keyframes aparecerSuave{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+/*==========================================*/
+/* IMÁGENES */
+/*==========================================*/
+
+img{
+
+-webkit-user-drag:none;
+
+user-select:none;
+
+}
+
+/*==========================================*/
+/* BOTÓN MÁS BONITO */
+/*==========================================*/
+
+#entrar{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+#entrar::before{
+
+content:"";
+
+position:absolute;
+
+left:-100%;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.45),
+
+transparent
+
+);
+
+transition:.7s;
+
+}
+
+#entrar:hover::before{
+
+left:120%;
+
+}
+
+/*==========================================*/
+/* CONTADOR */
+/*==========================================*/
+
+#tiempo{
+
+letter-spacing:1px;
+
+}
+
+/*==========================================*/
+/* RESPONSIVE */
+/*==========================================*/
+
+@media(max-width:500px){
+
+body{
+
+font-size:16px;
+
+}
+
+#inicio h1{
+
+font-size:52px;
+
+padding:0 10px;
+
+}
+
+#entrar{
+
+width:220px;
+
+font-size:20px;
+
+}
+
+.carta{
+
+width:92%;
+
+padding:28px;
+
+margin:35px auto;
+
+}
+
+h2{
+
+font-size:40px;
+
+}
+
+h3{
+
+font-size:26px;
+
+}
+
+p{
+
+font-size:18px;
+
+line-height:2;
+
+}
+
+.galeria img{
+
+height:320px;
+
+}
+
+}
+
+/*==========================================*/
+/* ANIMACIÓN DEL FONDO */
+/*==========================================*/
+
+body{
+
+animation:fondo 25s ease-in-out infinite;
+
+}
+
+@keyframes fondo{
+
+0%{
+
+filter:brightness(.96);
+
+}
+
+50%{
+
+filter:brightness(1.04);
+
+}
+
+100%{
+
+filter:brightness(.96);
+
+}
+
+}
+
+/*==========================================*/
+/* TRANSICIONES */
+/*==========================================*/
+
+*{
+
+transition:
+background-color .25s,
+color .25s;
 
 }
 
@@ -329,6 +893,8 @@ text-shadow:1px 1px 5px black;
 
 <body>
 
+<div id="petalos"></div>
+<div id="luz"></div>
 <!-- Música -->
 
 <audio id="musica" loop>
@@ -345,6 +911,11 @@ text-shadow:1px 1px 5px black;
 
 </section>
 
+<div class="contador">
+    <h3>❤️ desde el 26 de junio hasta ahora, llevamos juntos ❤️</h3>
+
+    <div id="tiempo"></div>
+</div>
 <!-- Contenido -->
 
 <div id="contenido">
@@ -356,15 +927,19 @@ text-shadow:1px 1px 5px black;
 <h2>bienvenida mi niña</h2>
 
 <p>
-la verdad, despues de tanto tiempo pensando en que regalarte, me di cuenta de que no existe un regalo que pueda expresar todo lo que siento por vos mi amor, así que se me ocurrio crear esta pequeña pagina donde poder guardar una parte de todos nuestros recuerdos juntos
+La verdad, después de tanto tiempo pensando en qué regalarte, me di cuenta de que no existe un regalo capaz de expresar todo lo que siento por vos, mi amor.
 
-aca deje grabada nuestra historia de como nos conocimos, fotos, conversaciones y mi declaración del amor tan profundo que te tengo y que sale desde lo más profundo de mi corazón
+Así que se me ocurrió crear esta pequeña página donde poder guardar una parte de todos nuestros recuerdos juntos.
 
-ojala que te guste cada detalle que voy a dejar aca
+Acá dejé grabada nuestra historia de cómo nos conocimos, algunas de mis fotos favoritas de nosotros, conversaciones que siempre voy a recordar y una declaración del amor tan profundo que siento por vos y que nace desde lo más profundo de mi corazón.
 
-Espero que cada vez que vuelvas a ver esta pagina, te acordes de que sos la personas más importante de mi vida y siempre vas a tener un lugar especial en mi corazón.
+Ojalá que te guste cada detalle que voy a ir dejando acá.
 
-Con todo mi amor, Ulises 
+Espero que cada vez que vuelvas a entrar a esta página recuerdes que sos la persona más importante de mi vida y que siempre vas a tener un lugar especial en mi corazón.
+
+Con todo mi amor,
+
+Ulises ❤️
 </p>
 
 </section>
@@ -376,12 +951,15 @@ Con todo mi amor, Ulises
 <h3>Nuestra historia</h3>
 
 <p>
+Nuestra historia comenzó un hermoso 18 de junio, después de que le dijera a Miel que quería conocer a una chica que realmente me quisiera, sin imaginar que terminaría conociéndote a vos, el amor de mi vida.
 
-Nuestra historia comenzó un hermoso 18 de junio, luego de que le dijera a miel que queria conocer a una niña que me quiera, sin saber que te iba a terminar conociendo a ti, el amor de mi vida 
-luego nos fuimos conociendo, fuimos dandonos confianza entre los 2 a medida que iba pasando el tiempo, te hable sobre mi, me hablaste de ti y a medida que nos conociamos nos fuimos dando cuenta que jamas nos ibamos a querer separar de nuevo
-cada momento contigo fue especial, sea bueno o malo, siempre marco nuestro camino hasta donde estamos ahora, cada risa, enojo, tristeza, felicidad, cada momento juntos siempre fue lleno de amor, 
-luego, un 26 de junio me anime y te pedi ser mi novia, sin saber si las cosas iban a salir bien, al final resulto que si, y es algo tan lindo lo nuestro que actualmente no me imagino estando sin vos
+Poco a poco nos fuimos conociendo, dándonos confianza el uno al otro mientras pasaban los días. Yo te hablé de mí, vos me hablaste de vos y, sin darnos cuenta, ambos empezamos a sentir que jamás íbamos a querer separarnos.
 
+Cada momento a tu lado fue especial. Los buenos, los difíciles, las risas, los enojos, las tristezas y las alegrías fueron construyendo el camino que hoy recorremos juntos.
+
+Después, un 26 de junio, me animé a pedirte que fueras mi novia. Lo hice con muchísimos nervios, sin saber qué iba a pasar. Y cuando me dijiste que sí, sentí una felicidad imposible de explicar.
+
+Desde ese día no puedo imaginar una vida en la que vos no estés.
 </p>
 
 </section>
@@ -451,17 +1029,31 @@ Aquí escribiré otra explicación.
 <h2>Mi declaración para ti</h2>
 
 <p>
+Ahora mismo, mientras escribo esta carta, vos estás durmiendo.
 
-Ahora que te estoy escribiendo esta carta, seguramente mientras vos estas durmiendo, pienso en todo lo que significas para mí y me doy cuenta de que realmente no tengo palabras para explicarte todo lo que te amo, pero si te lo tuviera que poner en palabras, creo que esto seria lo mas cercano:
+Me pongo a pensar en todo lo que significás para mí y me doy cuenta de que realmente no existen palabras suficientes para explicar cuánto te amo. Pero, si tuviera que intentarlo, creo que esto sería lo más cercano.
 
-Ileana Garcia Estefania Rubio, sos la luz de mis ojos, me encanta com sos conmigo, tu atencion, tu alegria, y esa forma tan preciosa y unica de hacerme sentir que estando con vos, no necesito estar en nigun otro lugar que no sea hablando con vos, estar con vos (aunque sea a traves de una pantalla por ahora) me hizo demasiado feliz
+Ileana García Estefanía Rubio...
 
-no sabes como sueño con que en algun momento la vida y el destino nos deje vernos en la vida real, daria lo que fuera porque pudieras estar aca conmigo ahora mismo, porque te juro que jamas me separaria de vos, ahora que te tengo, me doy cuenta que sos lo que siempre necesite en mi vida
+Sos la luz de mis ojos.
 
-Gracias por elegirme cada dia mi bebé
-    con muchisimo amor, 
-    Ulises
+Me encanta cómo sos conmigo, tu atención, tu forma de hacerme sentir querido, tu alegría y esa manera tan única de hacerme sentir que, cuando estoy con vos, no necesito estar en ningún otro lugar.
 
+Aunque por ahora solo podamos hablar a través de una pantalla, lográs hacerme la persona más feliz del mundo.
+
+No sabés cuánto sueño con el día en que podamos vernos en persona. Daría lo que fuera por abrazarte y no soltarte nunca más.
+
+Desde que llegaste a mi vida entendí que eras todo lo que siempre estuve buscando.
+
+Gracias por elegirme todos los días.
+
+Gracias por hacerme sentir amado.
+
+Y gracias, simplemente, por ser vos.
+
+Con muchísimo amor,
+
+Ulises ❤️
 </p>
 
 </section>
@@ -476,31 +1068,206 @@ Hecho con todo mi amor ❤️
 
 <script>
 
-const boton=document.getElementById("entrar");
+// ===============================
+// ELEMENTOS
+// ===============================
 
-const contenido=document.getElementById("contenido");
+const boton = document.getElementById("entrar");
+const contenido = document.getElementById("contenido");
+const inicio = document.getElementById("inicio");
+const musica = document.getElementById("musica");
 
-const inicio=document.getElementById("inicio");
+// ===============================
+// BOTÓN ENTRAR
+// ===============================
 
-const musica=document.getElementById("musica");
+boton.addEventListener("click", () => {
 
-boton.onclick=()=>{
+    inicio.style.display = "none";
+    contenido.style.display = "block";
 
-inicio.style.display="none";
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
-contenido.style.display="block";
-
-musica.play().catch(()=>{
-
-alert("Presiona reproducir la canción.");
-
-musica.controls=true;
+    musica.play().catch(() => {
+        musica.controls = true;
+        alert("Presiona reproducir para escuchar la música ❤️");
+    });
 
 });
 
-};
+// ===============================
+// CONTADOR
+// ===============================
 
+// Cambia la fecha si es necesario
+const inicioRelacion = new Date("2026-06-26T14:51:00");
+
+function actualizarTiempo(){
+
+    const ahora = new Date();
+
+    let diferencia = ahora - inicioRelacion;
+
+    if(diferencia < 0){
+        diferencia = 0;
+    }
+
+    const dias = Math.floor(diferencia / (1000*60*60*24));
+
+    const horas = Math.floor(
+        (diferencia % (1000*60*60*24))
+        /(1000*60*60)
+    );
+
+    const minutos = Math.floor(
+        (diferencia % (1000*60*60))
+        /(1000*60)
+    );
+
+    const segundos = Math.floor(
+        (diferencia % (1000*60))
+        /1000
+    );
+
+    document.getElementById("tiempo").innerHTML =
+    `
+    ${dias} días <br>
+    ${horas} horas • ${minutos} minutos • ${segundos} segundos
+    `;
+
+}
+
+actualizarTiempo();
+setInterval(actualizarTiempo,1000);
+
+// ===============================
+// PÉTALOS
+// ===============================
+
+const contenedorPetalos = document.getElementById("petalos");
+
+function crearPetalo(){
+
+    const petalo = document.createElement("div");
+
+    petalo.className = "petalo";
+
+    const flores = [
+        "🌸",
+        "🌸",
+        "🌸",
+        "🌺",
+        "💮"
+    ];
+
+    petalo.innerHTML =
+        flores[Math.floor(Math.random()*flores.length)];
+
+    petalo.style.left = Math.random()*100 + "vw";
+
+    petalo.style.fontSize =
+        (18 + Math.random()*18) + "px";
+
+    petalo.style.animationDuration =
+        (7 + Math.random()*6) + "s";
+
+    petalo.style.opacity =
+        0.5 + Math.random()*0.5;
+
+    contenedorPetalos.appendChild(petalo);
+
+    setTimeout(()=>{
+
+        petalo.remove();
+
+    },13000);
+
+}
+
+setInterval(crearPetalo,350);
+
+// ===============================
+// ILUMINACIÓN
+// ===============================
+
+const luz = document.getElementById("luz");
+
+window.addEventListener("scroll",()=>{
+
+    const altura =
+        document.body.scrollHeight - window.innerHeight;
+
+    const porcentaje =
+        window.scrollY / altura;
+
+    const oscuridad =
+        0.18 + porcentaje * 0.18;
+
+    luz.style.background = `
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.18),
+            rgba(0,0,0,${oscuridad})
+        )
+    `;
+
+});
+
+// ===============================
+// APARICIÓN DE LAS CARTAS
+// ===============================
+
+const cartas = document.querySelectorAll(".carta");
+
+const observer = new IntersectionObserver((entradas)=>{
+
+    entradas.forEach((entrada)=>{
+
+        if(entrada.isIntersecting){
+
+            entrada.target.style.opacity="1";
+            entrada.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:.15
+});
+
+cartas.forEach((carta)=>{
+
+    carta.style.opacity="0";
+    carta.style.transform="translateY(40px)";
+    carta.style.transition=".8s";
+
+    observer.observe(carta);
+
+});
+
+// ===============================
+// EFECTO EN IMÁGENES
+// ===============================
+
+document.querySelectorAll("img").forEach(img=>{
+
+    img.addEventListener("touchstart",()=>{
+
+        img.style.transform="scale(.98)";
+
+    });
+
+    img.addEventListener("touchend",()=>{
+
+        img.style.transform="scale(1)";
+
+    });
+
+});
 </script>
-
 </body>
 </html>
