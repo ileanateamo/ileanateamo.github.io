@@ -343,25 +343,13 @@ text-align:justify;
 /* GALERÍA DE FOTOS */
 /*==========================================*/
 
-.galeria{
-
-display:grid;
-
-grid-template-columns:1fr;
-
-gap:22px;
-
-margin-top:25px;
-
-}
-
 .galeria img{
 
 width:100%;
 
-height:320px;
+height:auto;
 
-object-fit:cover;
+object-fit:contain;
 
 border-radius:22px;
 
@@ -1005,35 +993,45 @@ Desde ese día no puedo imaginar una vida en la que vos no estés.
 
 <section class="carta">
 
-<h3>Mis conversaciones favoritas</h3>
+<h3>Un recuerdo para siempre</h3>
 
 <div class="conversacion">
 
-<img src="chat1.jpg">
+<img src="acta_matrimonio.jpg">
 
 <p class="descripcion">
 
-Aquí escribiré por qué esta conversación fue mi favorita.
+Este es uno de los recuerdos más importantes de nuestra historia.
+
+Un papel que representa una promesa, un momento que vamos a guardar para siempre y el comienzo de una nueva etapa juntos.
+
+Cada vez que vea esta imagen voy a recordar la felicidad de ese día y lo afortunado que soy de poder compartir mi vida con vos.
+
+❤️
 
 </p>
 
 </div>
-
-<div class="conversacion">
-
-<img src="chat2.jpg">
-
-<p class="descripcion">
-
-Aquí escribiré otra explicación.
-
-</p>
-
-</div>
-
-<!-- Puedes copiar este bloque todas las veces que quieras -->
 
 </section>
+
+.conversacion img{
+
+width:100%;
+
+max-width:600px;
+
+height:auto;
+
+display:block;
+
+margin:auto;
+
+border-radius:22px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.22);
+
+}
 
 <!-- Declaración -->
 
